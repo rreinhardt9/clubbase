@@ -1,0 +1,20 @@
+<% if !session[:access_token] %>
+  <a href="/sign_in">Sign In To Basecamp</a>
+<% end %>
+
+<% if !session[:ch_key] %>
+  <form action="/add_ch_key" method="post">
+    <label for="ch_key">Enter your Clubhouse Key:</label>
+    <input type="text" name="ch_key" value="">
+    <button type="submit">Save</button>
+  </form>
+<% end %>
+
+<% if session[:access_token] && session[:ch_key] %>
+  <h1>Welcome!</h1>
+  <p>Your are now authenticated and can:</p>
+  <ul>
+    <li><a href="/transfer_todoset">Create Stories in Epic for Todoset</a></li>
+    <li><a href="/log_out">Log Out</a></li>
+  </ul>
+<% end %>

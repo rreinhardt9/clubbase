@@ -1,0 +1,43 @@
+<h1>Create Stories from TODOs</h1>
+<form action="/move_todos" method="post">
+  <section>
+    <h2>Specify Clubhouse Epic</h2>
+    <p>
+      <label for="ch_project_id">Clubhouse Project ID</label>
+      <input required id="ch_project_id" type="text" name="ch_project_id">
+    </p>
+    <p>
+      <label for="ch_epic_id">Clubhouse Epic ID</label>
+      <input required id="ch_epic_id" type="text" name="ch_epic_id">
+    </p>
+  </section>
+
+  <section>
+    <h2>Specify Basecamp Todoset</h2>
+    <p>
+      <label for="bc_todoset_uri">URL of TODOset</label>
+      <input id="bc_todoset_uri" type="url" name="bc_todoset_uri" size=70
+             placeholder="https://3.basecamp.com/123/buckets/2/todosets/3"
+             pattern="https://3.basecamp.com/.*/buckets/.*/todosets/.*">
+    </p>
+
+    <p>
+      OR
+    </p>
+
+    <p>
+      <label for="bc_app_id">Basecamp App ID</label>
+      <input type="text" name="bc_app_id">
+    </p>
+    <p>
+      <label for="bucket_id">Bucket ID</label>
+      <input type="text" name="bucket_id">
+    </p>
+    <p>
+      <label for="todo_id">TODO ID</label>
+      <input type="text" name="todo_id">
+    </p>
+  </section>
+  <button type="submit">Get TODOs</button>
+</form>
+
