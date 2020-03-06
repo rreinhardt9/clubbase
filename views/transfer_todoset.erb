@@ -17,25 +17,9 @@
     <p>
       <label for="bc_todoset_uri">URL of TODOset</label>
       <input id="bc_todoset_uri" type="url" name="bc_todoset_uri" size=70
+             required
              placeholder="https://3.basecamp.com/123/buckets/2/todosets/3"
              pattern="https://3.basecamp.com/.*/buckets/.*/todosets/.*">
-    </p>
-
-    <p>
-      OR
-    </p>
-
-    <p>
-      <label for="bc_app_id">Basecamp App ID</label>
-      <input type="text" name="bc_app_id">
-    </p>
-    <p>
-      <label for="bucket_id">Bucket ID</label>
-      <input type="text" name="bucket_id">
-    </p>
-    <p>
-      <label for="todo_id">TODO ID</label>
-      <input type="text" name="todo_id">
     </p>
   </section>
   <button type="submit">Get TODOs</button>
