@@ -24,8 +24,8 @@ def basecamp_client
     ENV['CLIENT_ID'],
     ENV['CLIENT_SECRET'],
     site: "https://3.basecampapi.com/",
-    authorize_url: "#{ENV['BASECAMP_OAUTH']}authorization/new",
-    token_url: "#{ENV['BASECAMP_OAUTH']}authorization/token"
+    authorize_url: "https://launchpad.37signals.com/authorization/new",
+    token_url: "https://launchpad.37signals.com/authorization/token"
   )
 end
 
