@@ -76,9 +76,9 @@ get '/log_out' do
 end
 
 post '/move_todos' do
-  # begin
-    todoset_url = params[:bc_todoset_uri]
-    path = "/#{todoset_url[1]}/buckets/#{todoset_url[3]}/todosets/#{todoset_url[5]}/todolists.json"
+  begin
+    todoset_path = URI.parse(params[:bc_todoset_uri]).path
+    path = "#{todoset_path}/todolists.json"
 
     @stories = []
     lists_response = access_token.get(path)
@@ -107,8 +107,8 @@ post '/move_todos' do
       "Content-Type" => "application/json"
     )
     redirect '/'
-  # rescue OAuth2::Error => _e
-  #   erb :error
-  # end
+  rescue OAuth2::Error => _e
+    erb :error
+  end
 end
 
