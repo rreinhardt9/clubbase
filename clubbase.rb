@@ -89,8 +89,9 @@ post '/move_todos' do
           name: "[#{list["title"]}] #{todo["title"]}",
           description: todo["description"],
           project_id: params[:ch_project_id].to_i,
+          story_type: "feature",
           epic_id: params[:ch_epic_id].to_i,
-          external_id: todo["id"].to_s,
+          external_id: "Clubbase-#{todo["id"]}",
           external_tickets: [
             {external_id: todo["id"].to_s, external_url: todo["app_url"]}
           ]
